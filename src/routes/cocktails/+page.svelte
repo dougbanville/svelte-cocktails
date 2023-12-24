@@ -10,7 +10,7 @@
       {#if cocktails}
         <ul>
           {#each cocktails.drinks as cocktail}
-            <li>{cocktail.strDrink}</li>
+            <li><a href="/cocktails/{cocktail.idDrink}">{cocktail.strDrink}</a></li>
           {/each}
         </ul>
       {:else}
