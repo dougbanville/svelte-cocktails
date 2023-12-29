@@ -7,6 +7,11 @@
     
     <main>
       <h1>Cocktails</h1>
+      <form action="?/findCocktail" method="POST">
+        <label for="search">Search</label>
+        <input type="text" name="search" id="search" />
+        <button type="submit">Search</button>
+      </form>
       {#if cocktails}
         <ul>
           {#each cocktails.drinks as cocktail}

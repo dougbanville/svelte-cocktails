@@ -8,3 +8,17 @@ export async function load() {
 		cocktails
 	};
 }
+
+export const actions = {
+	findCocktail: async ({ request }) => {
+		const data = await request.formData();
+		let searchResults = await fetch(
+			`https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${data.get('search')}`
+		);
+		searchResults = await searchResults.json();
+		console.log(searchResults);
+		return {
+			searchResults
+		};
+	}
+};
