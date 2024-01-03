@@ -1,4 +1,6 @@
 <script>
+	import Drink from "../drink.svelte";
+
     export let data;
     
     // `data` contains the `cocktails` object returned by the `load` function
@@ -15,7 +17,7 @@
       {#if cocktails}
         <ul>
           {#each cocktails.drinks as cocktail}
-            <li><a href="/cocktails/{cocktail.idDrink}">{cocktail.strDrink}</a></li>
+            <li><Drink {cocktail}/></li>
           {/each}
         </ul>
       {:else}
